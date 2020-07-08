@@ -158,6 +158,10 @@
       singleUpload: {
         default: false,
         type: Boolean
+      },
+      method: {
+        default:'POST',
+        type: String
       }
     },
     data:()=>({
@@ -378,7 +382,7 @@
 
         xhr.withCredentials = true;
 
-        xhr.open('POST', this.action, true);
+        xhr.open(this.method, this.action, true);
 
         const headers = this.headers || {};
 
